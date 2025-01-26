@@ -1,7 +1,30 @@
-.background-image {
+/* .background-image {
   background-repeat: no-repeat;
   background-position: center;
   height: 600px;
   margin-left: 800px;
   margin-top: 100px;
+}
+ */
+
+.content-container {
+  display: flex; /* Disposizione orizzontale */
+  align-items: center; /* Allinea verticalmente */
+  justify-content: space-between; /* Spazio tra immagine e testo */
+  gap: 20px; /* Spazio tra immagine e testo */
+  margin: 50px; /* Margine esterno */
+}
+
+.image-container {
+  flex: 1; /* L'immagine occupa 1 parte dello spazio */
+}
+
+.background-image {
+  width: 100%; /* Assicura che l'immagine occupi tutto lo spazio disponibile */
+  height: auto; /* Mantiene le proporzioni */
+}
+
+.text-container {
+  flex: 1; /* Il testo occupa 1 parte dello spazio */
+  max-width: 50%; /* Limita la larghezza del contenitore di testo */
 }

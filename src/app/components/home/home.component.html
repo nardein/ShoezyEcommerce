@@ -1,8 +1,16 @@
-<div>
-  <img [src]="path" alt="scarpa" class="background-image">
-</div>
-<div id="container-cards">
-  <div class="container-card" *ngFor="let ricetta of ricette">
-    <app-recipe-card [recipe]="ricetta" [page]="'home'"></app-recipe-card>
+<div class="content-container">
+  <div class="image-container">
+    <img [src]="path" alt="scarpa" class="background-image">
+  </div>
+  <div class="text-container">
+    <h1>Sneakers per ogni tasca</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam rem aliquam nisi aut corporis dolore illo
+      totam?
+      Eligendi earum ullam omnis voluptatum nemo consequuntur sed. Nemo dicta dolorum delectus obcaecati.</p>
+  </div>
+  <div id="container-cards">
+    <div class="container-card" *ngFor="let ricetta of ricette">
+      <app-recipe-card [recipe]="ricetta" [page]="'home'"></app-recipe-card>
+    </div>
   </div>
 </div>

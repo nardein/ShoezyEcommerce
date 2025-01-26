@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'; //modulo con le funzioni piu usa
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { RecipeRoutingModule } from './recipe-routing.module';
+import { ScarpeRoutingModule } from './scarpe-routing.module';
 
 //PrimeNg Module
 import { PaginatorModule } from 'primeng/paginator';
@@ -12,8 +12,8 @@ import { EditorModule } from 'primeng/editor';
 import { RatingModule } from 'primeng/rating';
 
 //Componenti
-import { RecipesComponent } from './recipes.component';
-import { RecipeCardComponent } from '../shared/recipe-card/recipe-card.component';
+import { RecipesComponent } from './scarpe.component';
+import { RecipeCardComponent } from '../shared/recipe-card/scarpe-card.component';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { DetailComponent } from './detail/detail.component';
 
@@ -30,7 +30,7 @@ import { DetailComponent } from './detail/detail.component';
     FormsModule,
     ReactiveFormsModule,
     DatePipe,
-    RecipeRoutingModule,
+    ScarpeRoutingModule,
     PaginatorModule,
     ButtonModule,
     EditorModule,
@@ -38,4 +38,4 @@ import { DetailComponent } from './detail/detail.component';
   ],
   exports: [RecipeCardComponent], // i componenti condivisi
 })
-export class RecipesModule {}
+export class ScarpeModule {}

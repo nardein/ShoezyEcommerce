@@ -5,7 +5,7 @@ import { isAdminGuard } from '../../guards/is-admin.guard';
 import { DatePipe } from '@angular/common';
 
 //Components
-import { RecipesComponent } from './recipes.component';
+import { RecipesComponent } from './scarpe.component';
 import { DetailComponent } from './detail/detail.component';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 
@@ -25,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes), DatePipe], //tutti i moduli figlio di app module devono avere forChild
   exports: [RouterModule],
 })
-export class RecipeRoutingModule {}
+export class ScarpeRoutingModule {}

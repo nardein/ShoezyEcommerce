@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DatePipe } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
-import localeIt from '@angular/common/locales/it';  // Importa la localizzazione italiana
+import localeIt from '@angular/common/locales/it'; // Importa la localizzazione italiana
 import { registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -32,7 +32,7 @@ import { ContattiComponent } from './components/contatti/contatti.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 
-import { RecipesModule } from './components/recipes/recipes.module';
+import { ScarpeModule } from './components/recipes/scarpe.module';
 
 registerLocaleData(localeIt, 'it');
 
@@ -63,12 +63,12 @@ registerLocaleData(localeIt, 'it');
     ButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    RecipesModule
+    ScarpeModule,
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'it' },  // Imposta la lingua predefinita su italiano
-    DatePipe
+    { provide: LOCALE_ID, useValue: 'it' }, // Imposta la lingua predefinita su italiano
+    DatePipe,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

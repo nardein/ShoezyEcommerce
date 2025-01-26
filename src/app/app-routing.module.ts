@@ -16,14 +16,25 @@ const routes: Routes = [
   { path: 'registrazione', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contatti', component: ContattiComponent },
-  { path: 'ricette', loadChildren: () => import("./components/recipes/recipes.module").then(module => module.RecipesModule) },
-  { path: 'profile', component: ProfileComponent, canActivate: [loggedInGuard] },
-  { path: '**', redirectTo: 'home' } // se l'url è sbagliato riporta alla home
+  {
+    path: 'scarpe',
+    loadChildren: () =>
+      import('./components/recipes/scarpe.module').then(
+        module => module.ScarpeModule
+      ),
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [loggedInGuard],
+  },
+  { path: '**', redirectTo: 'home' }, // se l'url è sbagliato riporta alla home
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}
