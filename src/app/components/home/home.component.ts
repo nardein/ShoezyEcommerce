@@ -11,7 +11,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements AfterViewInit {
-
+  path = '../../../assets/images/scarpahome.png';
   evindenziato = false;
   ricette: Recipe[] = [];
   datiRegistrazione = {};
@@ -27,24 +27,22 @@ export class HomeComponent implements AfterViewInit {
     private modalService: NgbModal
   ) {
     this.recipeService.getRecipes().subscribe({
-      next: (res) => {
+      next: res => {
         //se la risposta è positiva fai questo
         this.ricette = res.sort((a, b) => b._id - a._id).slice(0, 4); //sort delle ultime ricette
       },
-      error: (e) => console.error(e),
+      error: e => console.error(e),
     });
-
-
   }
 
   ngAfterViewInit(): void {
-    this.userService.datiUtente.subscribe((res) => {
+    this.userService.datiUtente.subscribe(res => {
       console.log(res);
       this.datiRegistrazione = res;
-      if(res !==null){
-        this.openModal(this.modaleRegistrazione)
+      if (res !== null) {
+        this.openModal(this.modaleRegistrazione);
       }
-      this.openModal(this.modaleRegistrazione)
+      this.openModal(this.modaleRegistrazione);
     });
   }
 
@@ -55,11 +53,12 @@ export class HomeComponent implements AfterViewInit {
   openModal(content: any, id?: string, nome?: string, cognome?: string) {
     this.idModale = id;
     this.nomeModale = nome;
-    this.modalService.open(content, { centered: true, size: 'lg' }).result
-    .then((res) => {
+    this.modalService
+      .open(content, { centered: true, size: 'lg' })
+      .result.then(res => {
         console.log('azione da eseguire');
         this.userService.datiUtente.next(null);
       })
-    .catch((error) => console.log('Nessuna azione da eseguire'));
+      .catch(error => console.log('Nessuna azione da eseguire'));
   }
 }

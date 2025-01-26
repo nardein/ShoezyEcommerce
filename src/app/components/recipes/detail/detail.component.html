@@ -5,11 +5,8 @@
     <p [innerHTML]="ricetta.description"></p>
     <h2>Difficoltà</h2>
     <p>
-      <img
-        [src]="percorsoStelline + ricetta.difficulty + '.png'"
-        class="difficolta"
-        alt="difficoltà {{ ricetta.difficulty }}"
-      />
+      <img [src]="percorsoStelline + ricetta.difficulty + '.png'" class="difficolta"
+        alt="difficoltà {{ ricetta.difficulty }}" />
     </p>
     <h2>
       Ricetta pubblicata il {{ ricetta.date | date : "EEEE dd MMMM yyyy" }}
